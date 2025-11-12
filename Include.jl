@@ -8,7 +8,10 @@ const _PATH_TO_FIGS = joinpath(_ROOT, "figs");
 using Pkg
 if (isfile(joinpath(_ROOT, "Manifest.toml")) == false) # have manifest file, we are good. Otherwise, we need to instantiate the environment
     Pkg.add(path="https://github.com/varnerlab/VLQuantitativeFinancePackage.jl.git")
-    Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
+    Pkg.activate(".")
+    Pkg.resolve()
+    Pkg.instantiate()
+    Pkg.update()
 end
 
 # load external packages -
@@ -20,6 +23,7 @@ using LinearAlgebra
 using Statistics
 using StatsBase
 using Plots
+using IJulia
 using Colors
 using StatsPlots
 using JLD2
